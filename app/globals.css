@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ── */
+  --color-primary-fixed: #e5e2e1;
+  --color-tertiary: #3cd7ff;
+  --color-secondary: #e0b6ff;
+  --color-surface-container-low: #1c1b1b;
+  --color-inverse-primary: #5f5e5e;
+  --color-on-secondary: #4c007d;
+  --color-primary-container: #0a0a0a;
+  --color-secondary-container: #6d11ad;
+  --color-on-primary-fixed-variant: #474646;
+  --color-on-secondary-container: #d7a4ff;
+  --color-error-container: #93000a;
+  --color-surface-variant: #353534;
+  --color-on-error: #690005;
+  --color-surface-dim: #131313;
+  --color-on-background: #e5e2e1;
+  --color-on-tertiary-fixed: #001f27;
+  --color-primary: #c9c6c5;
+  --color-on-secondary-fixed: #2e004e;
+  --color-on-primary-fixed: #1c1b1b;
+  --color-on-error-container: #ffdad6;
+  --color-on-primary-container: #7b7979;
+  --color-primary-fixed-dim: #c9c6c5;
+  --color-surface-container-high: #2a2a2a;
+  --color-tertiary-container: #000c11;
+  --color-surface-bright: #3a3939;
+  --color-on-tertiary-container: #0085a0;
+  --color-outline: #8e9192;
+  --color-outline-variant: #444748;
+  --color-error: #ffb4ab;
+  --color-surface-tint: #c9c6c5;
+  --color-on-surface-variant: #c4c7c7;
+  --color-secondary-fixed: #f2daff;
+  --color-on-secondary-fixed-variant: #6a0baa;
+  --color-surface-container-highest: #353534;
+  --color-secondary-fixed-dim: #e0b6ff;
+  --color-tertiary-fixed-dim: #3cd7ff;
+  --color-on-tertiary-fixed-variant: #004e5f;
+  --color-on-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+  --color-inverse-surface: #e5e2e1;
+  --color-surface: #131313;
+  --color-surface-container: #201f1f;
+  --color-on-tertiary: #003642;
+  --color-background: #131313;
+  --color-tertiary-fixed: #b4ebff;
+  --color-on-primary: #313030;
+  --color-surface-container-lowest: #0e0e0e;
+
+  /* ── Border Radius ── */
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* ── Fonts ── */
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+/* ── Base Styles ── */
+body {
+  background-color: #0e0e0e;
+  color: #e5e2e1;
+  font-family: "Inter", sans-serif;
+}
+
+::selection {
+  background-color: color-mix(in srgb, #e0b6ff 30%, transparent);
+  color: #3cd7ff;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+/* ── Utility Classes ── */
+.glass-card {
+  background: rgba(53, 53, 52, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #e0b6ff 0%, #3cd7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 30px -5px rgba(106, 11, 170, 0.3);
+}
