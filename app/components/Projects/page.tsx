@@ -5,24 +5,20 @@ interface Project {
   description: string;
   tags: string[];
   image: string;
-  imageAlt: string;
-  liveDemo: string;
-  sourceCode: string;
+  imageAlt: string;  
   offset?: boolean;
   hoverRotate?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Chime",
+    title: "Zynaxe",
     description:
-      "A ultra-low latency real-time communication platform built for developer teams. Featuring end-to-end encryption and custom webhooks.",
-    tags: ["Next.js", "Socket.io", "Tailwind"],
+  "Frontend engineer at Zynaxe, building scalable web and mobile interfaces with Next.js and React Native. Focused on real-time communication features, performance optimization, and seamless user experiences using WebSockets, Redux Toolkit, and Tailwind CSS.",
+    tags: ["ReactNative", "Websocket", "Tailwind", "NextJs", "ReduxToolkit"],
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDsRJLdXEEHMS52w9IHSGybGLRNUHGHJNdiHr7oeORizIx5O8B3OoBD8BKXWi_gQHNpNU1R8A_RfmgVPuEcn4CqiEoatQxi6_sxjTT606ST9WwrPG2w0SjiWh0jA2lnoxc5Faqs2A8NSAJXPnGYLQ6QpR0w1_3ODrdeyR-W91L2flrSbbnJfi4IibAWFTflZXKgkH2iRBZ0TtA4KI7DISCCz9IIxxe_vFjA8AZI3l49J4FKtfY0pAatvsemjdCBpQODW7s8Jn4GhhY",
-    imageAlt: "Clean minimal UI of a real-time chat application dashboard",
-    liveDemo: "#",
-    sourceCode: "#",
+    imageAlt: "Clean minimal UI of a real-time chat application dashboard",    
     hoverRotate: "group-hover:rotate-1",
   },
   {
@@ -32,9 +28,7 @@ const projects: Project[] = [
     tags: ["React", "Three.js", "D3.js"],
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBf5K6Pm0UwJ-GwjgWgb2lfKdQjDMjbq6etzT8Rf2LC3wbkbxO-rOUCV-VA3JymFN70Uv679YP7qpYu603q5-6gUsiZiA8NiKvlhMHbY4qrrfVN7K3--zNWad78qt-h-FvH6uf69UchIecKkVwOe_8yxDzCtRM_FV981JTgoV6Y9okEjlFnyZOwOGOYoc7RO3Yf94iCdARMsMi84I__0eoDGipv62650qxIVaeSMxe0tbJALR-PZNmw8RpC8RtGDFH27R3_RLMjv1A",
-    imageAlt: "Futuristic data visualization dashboard with 3D graphs",
-    liveDemo: "#",
-    sourceCode: "#",
+    imageAlt: "Futuristic data visualization dashboard with 3D graphs",   
     offset: true,
     hoverRotate: "group-hover:-rotate-1",
   },
@@ -80,22 +74,7 @@ function ProjectCard({ project }: { project: Project }) {
       <p className="text-on-primary-container font-body leading-relaxed mb-6">
         {project.description}
       </p>
-
-      {/* Links */}
-      <div className="mt-auto flex items-center gap-6">
-        <a
-          href={project.liveDemo}
-          className="text-secondary font-bold text-sm uppercase tracking-widest border-b border-transparent hover:border-secondary transition-all"
-        >
-          Live Demo
-        </a>
-        <a
-          href={project.sourceCode}
-          className="text-tertiary font-bold text-sm uppercase tracking-widest border-b border-transparent hover:border-tertiary transition-all"
-        >
-          Source Code
-        </a>
-      </div>
+      
     </div>
   );
 }

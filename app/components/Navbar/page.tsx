@@ -1,17 +1,46 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const navLinks = [
-  { href: "#work", label: "Work", active: true },
+  { href: "#work", label: "Work" },
   { href: "#expertise", label: "Expertise" },
   { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <nav className="sticky top-0 w-full z-50 bg-neutral-950/40 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(106,11,170,0.05)]">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-20 font-headline tracking-tight">
         {/* Logo */}
         <div className="text-2xl font-black tracking-tighter text-neutral-100">
-          OBSIDIAN
+          MUBARAK
         </div>
 
         {/* Nav Links */}
@@ -21,7 +50,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={
-                link.active
+                activeSection === link.href
                   ? "text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 hover:text-purple-300 transition-colors duration-300"
                   : "text-neutral-400 font-medium hover:text-purple-300 transition-colors duration-300"
               }
