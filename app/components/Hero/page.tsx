@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
             href="#work"
-            className="px-8 py-4 rounded-full bg-secondary text-on-secondary font-bold text-lg hover:shadow-[0_0_40px_-5px_rgba(224,182,255,0.4)] transition-all"
+            className="px-8 py-4 rounded-full bg-secondary text-on-secondary font-bold text-lg hover:shadow-[0_0_40px_-5px_rgba(255,190,11,0.4)] transition-all"
           >
             View My Work
           </a>

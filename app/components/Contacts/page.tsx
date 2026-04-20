@@ -3,9 +3,8 @@
 import { FormEvent } from "react";
 
 const socialLinks = [
-  { label: "GITHUB", href: "#", hoverColor: "hover:text-tertiary" },
-  { label: "LINKEDIN", href: "#", hoverColor: "hover:text-secondary" },
-  { label: "DRIBBBLE", href: "#", hoverColor: "hover:text-on-secondary-container" },
+  { label: "GITHUB", href: "https://github.com/mubarakkkkkk", hoverColor: "hover:text-tertiary" },
+  { label: "LINKEDIN", href: "#", hoverColor: "hover:text-secondary" }
 ];
 
 export default function Contact() {

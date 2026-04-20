@@ -36,10 +36,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-neutral-950/40 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(106,11,170,0.05)]">
+    <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(255,190,11,0.04)]">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-20 font-headline tracking-tight">
         {/* Logo */}
-        <div className="text-2xl font-black tracking-tighter text-neutral-100">
+        <div className="text-2xl font-black tracking-tighter text-on-surface">
           MUBARAK
         </div>
 
@@ -51,8 +51,8 @@ export default function Navbar() {
               href={link.href}
               className={
                 activeSection === link.href
-                  ? "text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 hover:text-purple-300 transition-colors duration-300"
-                  : "text-neutral-400 font-medium hover:text-purple-300 transition-colors duration-300"
+                  ? "text-secondary font-bold border-b-2 border-secondary pb-1 hover:text-tertiary transition-colors duration-300"
+                  : "text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300"
               }
             >
               {link.label}

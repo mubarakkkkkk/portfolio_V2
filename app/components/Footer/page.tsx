@@ -7,8 +7,8 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950 w-full py-12">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6 font-label text-[0.6875rem] uppercase tracking-widest text-neutral-400">
+    <footer className="bg-black w-full py-12">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">
         {/* Copyright */}
         <div className="order-2 md:order-1">
           © 2024 THE OBSIDIAN LIGHT. ENGINEERED WITH RESTRAINT.
@@ -20,7 +20,7 @@ export default function Footer() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-neutral-500 hover:text-cyan-400 transition-all underline-offset-4 hover:underline"
+              className="text-on-primary-container hover:text-secondary transition-all underline-offset-4 hover:underline"
             >
               {link.label}
             </Link>
