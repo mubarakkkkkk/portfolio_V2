@@ -1,7 +1,7 @@
+import Link from "next/link";
 const footerLinks = [
-  { label: "Github", href: "#" },
+  { label: "Github", href: "https://github.com/mubarakkkkkk" },
   { label: "LinkedIn", href: "#" },
-  { label: "Dribbble", href: "#" },
   { label: "Email", href: "#" },
 ];
 
@@ -17,13 +17,13 @@ export default function Footer() {
         {/* Links */}
         <div className="order-1 md:order-2 flex gap-8">
           {footerLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-neutral-500 hover:text-cyan-400 transition-all underline-offset-4 hover:underline"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

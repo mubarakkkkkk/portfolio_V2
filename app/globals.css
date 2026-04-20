@@ -53,12 +53,6 @@
   --color-on-primary: #313030;
   --color-surface-container-lowest: #0e0e0e;
 
-  /* ── Border Radius ── */
-  --radius-DEFAULT: 0.125rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.5rem;
-  --radius-full: 0.75rem;
-
   /* ── Fonts ── */
   --font-headline: "Manrope", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -66,6 +60,12 @@
 }
 
 /* ── Base Styles ── */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: #0e0e0e;
   color: #e5e2e1;
@@ -90,10 +90,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #e0b6ff 0%, #3cd7ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #3cd7ff;
 }
 
 .glow-hover:hover {

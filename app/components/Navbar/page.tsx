@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { href: "#work", label: "Work" },
   { href: "#expertise", label: "Expertise" },
+  { href: "#work", label: "Work" },  
   { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
@@ -61,7 +61,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <button className="px-6 py-2.5 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-gradient-to-r hover:from-secondary hover:to-tertiary hover:text-on-secondary transition-all duration-300 active:scale-95">
+        <button className="px-6 py-2.5 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-all duration-300 active:scale-95">
           Hire Me
         </button>
       </div>

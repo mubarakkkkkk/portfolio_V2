@@ -47,7 +47,7 @@ export default function About() {
 
         {/* Image Card */}
         <div className="lg:col-span-5 relative group">
-          <div className="absolute -inset-1 bg-gradient-to-br from-secondary/20 to-tertiary/20 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+          <div className="absolute -inset-1 bg-secondary/20 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
           <div className="relative aspect-square rounded-xl overflow-hidden glass-card border border-outline-variant/10">
             <Image
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuARM1hgzuyO2_oDY4dmH7uDT_oNj2rnGqyqaoCKLm8EfEEnGph7NQs69YLCLEs3Wd-eNaB75FbKjCawOhEdLvqlf-ZEMzpS7QWd7UrZHO3GkkGsL80FvK3vwWsMBvrjwBWN0ZoOdOkq_hf8larZiL4eGRQr5L_sfbgcFEmzGjIgCQ2z84l0CVGFitXmuRkc-Scraav-Zk_QzRgPziQ8kL5aNwYAWD8749oefVR1V9_bma1OifNwvICb39p5eInRbuo6KhLfEYkRag0"

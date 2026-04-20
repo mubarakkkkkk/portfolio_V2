@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 interface Project {
   title: string;
@@ -38,7 +39,7 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className={`group relative flex flex-col ${project.offset ? "md:mt-24" : ""}`}>
       {/* Image */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high mb-8 shadow-2xl">
+      <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-surface-container-high mb-8 shadow-2xl">
         <Image
           src={project.image}
           alt={project.imageAlt}
@@ -95,9 +96,7 @@ export default function Projects() {
             </p>
           </div>
           <div className="flex gap-4">
-            <span className="material-symbols-outlined text-tertiary scale-150">
-              arrow_right_alt
-            </span>
+            < ArrowRight className="material-symbols-outlined text-tertiary scale-150" />
           </div>
         </div>
 

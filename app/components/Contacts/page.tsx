@@ -41,7 +41,7 @@ export default function Contact() {
               />
               <label
                 htmlFor="name"
-                className="absolute left-0 top-4 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
+                className="absolute left-0 top-4 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs"
               >
                 Your Name
               </label>
@@ -88,7 +88,7 @@ export default function Contact() {
               type="submit"
               className="group relative px-12 py-5 overflow-hidden rounded-full font-bold uppercase tracking-widest text-sm"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-secondary to-tertiary transition-transform group-hover:scale-105" />
+              <span className="absolute inset-0 bg-secondary transition-transform group-hover:scale-105" />
               <span className="relative text-on-secondary flex items-center gap-2">
                 Send Transmission
                 <span className="material-symbols-outlined text-sm">send</span>
