@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const stats = [
-  { value: "5+", label: "Years Exp.", color: "text-tertiary" },
-  { value: "40+", label: "Projects", color: "text-secondary" },
+  { value: "3+", label: "Years Exp.", color: "text-tertiary" },
+  { value: "20+", label: "Projects", color: "text-secondary" },
 ];
 
 export default function About() {
