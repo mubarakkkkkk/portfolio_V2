@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Download } from "lucide-react";
 
 const navLinks = [
   { href: "#expertise", label: "Expertise" },
@@ -35,6 +36,13 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  const handleDownload  = () => {
+    const link = document.createElement('a');
+    link.href = "/Mubarak Abiola's Resume.pdf";
+    link.download = "Mubarak's Resume";
+    link.click();
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(255,190,11,0.04)]">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-20 font-headline tracking-tight">
@@ -61,8 +69,10 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <button className="px-6 py-2.5 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-all duration-300 active:scale-95">
-          Hire Me
+        <button 
+        onClick={handleDownload}
+        className="flex gap-2 px-6 py-2.5 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-all duration-300 active:scale-95">
+          Download Resume <Download />
         </button>
       </div>
     </nav>
