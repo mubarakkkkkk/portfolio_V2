@@ -15,18 +15,17 @@ export default function About() {
             Crafting the digital void
           </span>
           <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-on-surface mb-8">
-            Engineering with Intent
+            About me
           </h2>
           <div className="space-y-6 text-on-surface-variant font-body text-lg leading-relaxed max-w-2xl">
             <p>
-              I believe that performance is a design feature. My approach to
-              frontend development prioritizes speed, accessibility, and
-              architectural longevity.
-            </p>
-            <p>
-              By blending deep technical expertise in the React ecosystem with a
-              keen eye for editorial-grade design, I create web applications
-              that feel as premium as they perform.
+             I’m a passionate frontend engineer focused on building clean, responsive, and user-friendly web applications. I enjoy turning complex ideas into simple, intuitive interfaces that deliver real value to users.
+
+With a strong foundation in modern technologies like React and Next.js, I specialize in creating scalable and high-performance applications. I pay close attention to detail—from smooth user interactions to maintainable code structure—ensuring every project I work on meets a high standard.
+
+Beyond just writing code, I’m constantly learning and improving my skills, exploring new tools, and staying up to date with industry best practices. I enjoy solving problems, collaborating with others, and bringing ideas to life through thoughtful design and development.
+
+Currently, I’m working on building real-time applications and expanding my expertise across the full stack.
             </p>
           </div>
 

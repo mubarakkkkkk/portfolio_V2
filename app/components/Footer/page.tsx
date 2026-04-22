@@ -1,8 +1,7 @@
 import Link from "next/link";
 const footerLinks = [
   { label: "Github", href: "https://github.com/mubarakkkkkk" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Email", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mubarak-abiola-019b47306/" },
 ];
 
 export default function Footer() {
@@ -11,7 +10,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6 font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">
         {/* Copyright */}
         <div className="order-2 md:order-1">
-          © 2024 THE OBSIDIAN LIGHT. ENGINEERED WITH RESTRAINT.
+          09018685567 | abiolamubarakolamide05@gmail.com
         </div>
 
         {/* Links */}

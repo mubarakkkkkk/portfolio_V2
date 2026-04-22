@@ -1,16 +1,42 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 const socialLinks = [
   { label: "GITHUB", href: "https://github.com/mubarakkkkkk", hoverColor: "hover:text-tertiary" },
-  { label: "LINKEDIN", href: "#", hoverColor: "hover:text-secondary" }
+  { label: "LINKEDIN", href: "https://www.linkedin.com/in/mubarak-abiola-019b47306/", hoverColor: "hover:text-secondary" }
 ];
 
 export default function Contact() {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Add your form submission logic here
+    setStatus('loading');
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   }
 
   return (
@@ -29,67 +55,70 @@ export default function Contact() {
         {/* Form */}
         <form className="space-y-12" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Name Field */}
             <div className="relative">
               <input
                 id="name"
                 name="name"
                 type="text"
+                required
                 placeholder=" "
                 className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 px-0 text-on-surface focus:ring-0 focus:border-tertiary transition-all placeholder-transparent outline-none"
               />
-              <label
-                htmlFor="name"
-                className="absolute left-0 top-4 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs"
-              >
-                Your Name
-              </label>
+              <label htmlFor="name" className="absolute left-0 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4">
+  Your Name
+</label>
             </div>
 
-            {/* Email Field */}
             <div className="relative">
               <input
                 id="email"
                 name="email"
                 type="email"
+                required
                 placeholder=" "
-                className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 px-0 text-on-surface focus:ring-0 focus:border-tertiary transition-all placeholder-transparent outline-none"
+                className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 px-0 focus:ring-0 focus:border-tertiary transition-all placeholder-transparent outline-none"
               />
-              <label
-                htmlFor="email"
-                className="absolute left-0  text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
-              >
+              <label htmlFor="email" className="absolute left-0 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4">
                 Email Address
               </label>
             </div>
           </div>
 
-          {/* Message Field */}
           <div className="relative">
             <textarea
               id="message"
               name="message"
               rows={4}
+              required
               placeholder=" "
               className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 px-0 text-on-surface focus:ring-0 focus:border-tertiary transition-all placeholder-transparent resize-none outline-none"
             />
-            <label
-              htmlFor="message"
-              className="absolute left-0  text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
-            >
+            <label htmlFor="message" className="absolute left-0 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4">
               Tell me about the project
             </label>
           </div>
 
-          {/* Submit Button */}
+          {/* Feedback messages */}
+          {status === 'success' && (
+            <p className="text-center text-green-400 text-sm uppercase tracking-widest">
+              Message sent successfully!
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="text-center text-red-400 text-sm uppercase tracking-widest">
+              Something went wrong. Please try again.
+            </p>
+          )}
+
           <div className="flex justify-center">
             <button
               type="submit"
-              className="group relative px-12 py-5 overflow-hidden rounded-full font-bold uppercase tracking-widest text-sm"
+              disabled={status === 'loading'}
+              className="group relative px-12 py-5 overflow-hidden rounded-full font-bold uppercase tracking-widest text-sm disabled:opacity-50"
             >
               <span className="absolute inset-0 bg-secondary transition-transform group-hover:scale-105" />
               <span className="relative text-on-secondary flex items-center gap-2">
-                Send Transmission
+                {status === 'loading' ? 'Sending...' : 'Send Transmission'}
                 <span className="material-symbols-outlined text-sm">send</span>
               </span>
             </button>
