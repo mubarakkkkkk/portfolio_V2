@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MUBARAK | Frontend Developer Portfolio",
+  title: "MUBARAK | Software Engineer Portfolio",
   description:
-    "Frontend Developer specializing in React, Next.js, and building scalable & interactive web experiences.",
+    "Software Engineer specializing in React, Next.js, ReactNative, NodeJs, ExpressJs and building scalable & interactive web experiences.",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark overflow-x-hidden">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&family=Inter:wght@300;400;500;600&display=swap"
@@ -24,7 +24,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body className="overflow-x-hidden">{children}</body>
     </html>
   );
 }

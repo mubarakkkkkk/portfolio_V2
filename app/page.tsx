@@ -9,7 +9,7 @@ import ShootingStarsBackground from "./components/shootingStartBackground";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-screen overflow-x-hidden">
       <ShootingStarsBackground
         className="w-full"
         starCount={8}

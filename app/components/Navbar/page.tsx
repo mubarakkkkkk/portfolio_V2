@@ -44,7 +44,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(255,190,11,0.04)]">
+    <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(255,190,11,0.04)] overflow-hidden">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-20 font-headline tracking-tight">
         {/* Logo */}
         <div className="text-2xl font-black tracking-tighter text-on-surface">

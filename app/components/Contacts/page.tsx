@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { motion } from "framer-motion";
+import AnimatedSection from "../AnimatedSection";
 
 const socialLinks = [
   { label: "GITHUB", href: "https://github.com/mubarakkkkkk", hoverColor: "hover:text-tertiary" },
@@ -40,22 +42,35 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-32 bg-surface" id="contact">
+    <section className="py-32 bg-surface overflow-hidden w-full" id="contact">
       <div className="max-w-4xl mx-auto px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <AnimatedSection direction="up" className="text-center mb-16">
           <h2 className="font-headline text-5xl font-bold tracking-tighter text-on-surface mb-6">
             Let&apos;s Build Something
           </h2>
           <p className="text-on-primary-container text-lg">
             Currently accepting freelance commissions and full-time opportunities.
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Form */}
-        <form className="space-y-12" onSubmit={handleSubmit}>
+        <motion.form 
+          className="space-y-12" 
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="relative">
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <input
                 id="name"
                 name="name"
@@ -67,9 +82,15 @@ export default function Contact() {
               <label htmlFor="name" className="absolute left-0 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4">
   Your Name
 </label>
-            </div>
+            </motion.div>
 
-            <div className="relative">
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <input
                 id="email"
                 name="email"
@@ -81,10 +102,16 @@ export default function Contact() {
               <label htmlFor="email" className="absolute left-0 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4">
                 Email Address
               </label>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <textarea
               id="message"
               name="message"
@@ -96,21 +123,37 @@ export default function Contact() {
             <label htmlFor="message" className="absolute left-0 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4">
               Tell me about the project
             </label>
-          </div>
+          </motion.div>
 
           {/* Feedback messages */}
           {status === 'success' && (
-            <p className="text-center text-green-400 text-sm uppercase tracking-widest">
+            <motion.p 
+              className="text-center text-green-400 text-sm uppercase tracking-widest"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
               Message sent successfully!
-            </p>
+            </motion.p>
           )}
           {status === 'error' && (
-            <p className="text-center text-red-400 text-sm uppercase tracking-widest">
+            <motion.p 
+              className="text-center text-red-400 text-sm uppercase tracking-widest"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+            >
               Something went wrong. Please try again.
-            </p>
+            </motion.p>
           )}
 
-          <div className="flex justify-center">
+          <motion.div 
+            className="flex justify-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <button
               type="submit"
               disabled={status === 'loading'}
@@ -122,23 +165,34 @@ export default function Contact() {
                 <span className="material-symbols-outlined text-sm">send</span>
               </span>
             </button>
-          </div>
-        </form>
+          </motion.div>
+        </motion.form>
 
         {/* Social Links */}
-        <div className="mt-24 flex flex-col items-center gap-8">
+        <motion.div 
+          className="mt-24 flex flex-col items-center gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex gap-12">
-            {socialLinks.map((link) => (
-              <a
+            {socialLinks.map((link, idx) => (
+              <motion.a
                 key={link.label}
                 href={link.href}
                 className={`text-on-primary-container ${link.hoverColor} transition-colors flex items-center gap-2 font-label text-[0.6875rem] uppercase tracking-widest`}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 + idx * 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                whileHover={{ scale: 1.05 }}
               >
                 {link.label}
-              </a>
+              </motion.a>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
