@@ -3,7 +3,7 @@ const skillCategories = [
     title: "Frontend Core",
     description:
       "Architecting robust client-side applications with modern frameworks and type-safety.",
-    skills: ["React 18", "Next.js 14", "TypeScript", "Redux Toolkit", "TanStack Query"],
+    skills: ["React ", "Next.js ", "TypeScript", "Redux Toolkit", "TanStack Query", "ReactNative", "VueJs", "Websocket"],
     icon: "terminal",
     iconColor: "text-secondary",
     iconBg: "bg-secondary/10",
@@ -13,7 +13,7 @@ const skillCategories = [
   {
     title: "Development Tools",
     description: null,
-    skills: ["Git / Github", "Docker", "Vercel", "Storybook"],
+    skills: ["Git / Github", "Docker", "Vercel", "Storybook", "Railyway"],
     icon: null,
     iconColor: null,
     iconBg: null,
@@ -23,7 +23,7 @@ const skillCategories = [
   {
     title: "Styling & Motion",
     description: null,
-    skills: ["Tailwind CSS", "Framer Motion", "Radix UI", "CSS Modules"],
+    skills: ["Tailwind CSS", "Framer Motion", "Radix UI", "CSS Modules", "Shadcn"],
     icon: null,
     iconColor: null,
     iconBg: null,

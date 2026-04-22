@@ -21,16 +21,15 @@ const projects: Project[] = [
     hoverRotate: "group-hover:rotate-1",
   },
   {
-    title: "Vertex",
-    description:
-      "Interactive 3D data visualization suite for crypto assets. Real-time rendering of market sentiment via Three.js shaders.",
-    tags: ["React", "Three.js", "D3.js"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBf5K6Pm0UwJ-GwjgWgb2lfKdQjDMjbq6etzT8Rf2LC3wbkbxO-rOUCV-VA3JymFN70Uv679YP7qpYu603q5-6gUsiZiA8NiKvlhMHbY4qrrfVN7K3--zNWad78qt-h-FvH6uf69UchIecKkVwOe_8yxDzCtRM_FV981JTgoV6Y9okEjlFnyZOwOGOYoc7RO3Yf94iCdARMsMi84I__0eoDGipv62650qxIVaeSMxe0tbJALR-PZNmw8RpC8RtGDFH27R3_RLMjv1A",
-    imageAlt: "Futuristic data visualization dashboard with 3D graphs",   
-    offset: true,
-    hoverRotate: "group-hover:-rotate-1",
-  },
+  title: "Payrit",
+  description:
+    "Contributed to Payrit, a Nigerian fintech platform making cashless payments accessible to everyone. Built fast, intuitive interfaces supporting scan-to-pay, interbank transfers, cross-border payments, and subscription-based transfer plans — all optimized for speed and reliability.",
+  tags: ["React", "React Native", "Tailwind", "TypeScript"],
+  image: "https://api.microlink.io/?url=https%3A%2F%2Fpayrit.com&screenshot=true&meta=false&embed=screenshot.url&type=jpeg",
+  imageAlt: "Payrit fintech payment app landing page",
+  offset: true,
+  hoverRotate: "group-hover:-rotate-1",
+},
 ];
 
 function ProjectCard({ project }: { project: Project }) {
