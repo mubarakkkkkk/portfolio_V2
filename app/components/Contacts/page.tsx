@@ -57,7 +57,7 @@ export default function Contact() {
               />
               <label
                 htmlFor="email"
-                className="absolute left-0 top-4 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
+                className="absolute left-0  text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
               >
                 Email Address
               </label>
@@ -75,7 +75,7 @@ export default function Contact() {
             />
             <label
               htmlFor="message"
-              className="absolute left-0 top-4 text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
+              className="absolute left-0  text-on-primary-container transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-tertiary uppercase tracking-widest font-bold text-xs -top-4"
             >
               Tell me about the project
             </label>
