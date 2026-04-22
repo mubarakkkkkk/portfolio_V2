@@ -46,10 +46,7 @@ function ProjectCard({ project }: { project: Project }) {
         />
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-primary-container/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
-          <div className="flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-            <button className="px-6 py-2 rounded-full bg-on-surface text-surface-container-lowest font-bold text-sm uppercase tracking-widest">
-              Case Study
-            </button>
+          <div className="flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">            
           </div>
         </div>
       </div>
@@ -86,11 +83,10 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-xl">
             <h2 className="font-headline text-5xl font-bold tracking-tighter mb-4 text-on-surface">
-              Selected Artifacts
+              My projects
             </h2>
             <p className="text-on-surface-variant text-lg">
-              A curated collection of interfaces designed and deployed with
-              surgical precision.
+             A curated collection of interfaces I designed and deployed, blending clean design with smooth performance.
             </p>
           </div>
           <div className="flex gap-4">
