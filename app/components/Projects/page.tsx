@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 
 interface Project {
   title: string;
@@ -17,8 +16,7 @@ const projects: Project[] = [
     description:
   "Frontend engineer at Zynaxe, building scalable web and mobile interfaces with Next.js and React Native. Focused on real-time communication features, performance optimization, and seamless user experiences using WebSockets, Redux Toolkit, and Tailwind CSS.",
     tags: ["ReactNative", "Websocket", "Tailwind", "NextJs", "ReduxToolkit"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDsRJLdXEEHMS52w9IHSGybGLRNUHGHJNdiHr7oeORizIx5O8B3OoBD8BKXWi_gQHNpNU1R8A_RfmgVPuEcn4CqiEoatQxi6_sxjTT606ST9WwrPG2w0SjiWh0jA2lnoxc5Faqs2A8NSAJXPnGYLQ6QpR0w1_3ODrdeyR-W91L2flrSbbnJfi4IibAWFTflZXKgkH2iRBZ0TtA4KI7DISCCz9IIxxe_vFjA8AZI3l49J4FKtfY0pAatvsemjdCBpQODW7s8Jn4GhhY",
+    image: `https://api.microlink.io/?url=https://www.zynaxe.com&screenshot=true&meta=false&embed=screenshot.url`,
     imageAlt: "Clean minimal UI of a real-time chat application dashboard",    
     hoverRotate: "group-hover:rotate-1",
   },
@@ -44,6 +42,7 @@ function ProjectCard({ project }: { project: Project }) {
           src={project.image}
           alt={project.imageAlt}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className={`object-cover transition-transform duration-700 group-hover:scale-110 ${project.hoverRotate}`}
         />
         {/* Hover Overlay */}
@@ -96,7 +95,6 @@ export default function Projects() {
             </p>
           </div>
           <div className="flex gap-4">
-            < ArrowRight className="material-symbols-outlined text-tertiary scale-150" />
           </div>
         </div>
 
