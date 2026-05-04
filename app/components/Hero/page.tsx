@@ -2,7 +2,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import AnimatedSection from '../AnimatedSection';
 
 export default function Hero() {
   const containerVariants = {
@@ -61,7 +60,7 @@ export default function Hero() {
           className="font-body text-on-primary-container text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           Specializing in React, ReactNative, VueJs, Node.js, Next.js, Express.Js and technical restraint. I transform
-          complex problems into high-performance, pixel-perfect digital
+          complex problems into high performance, pixel perfect digital
           interfaces.
         </motion.p>
 
