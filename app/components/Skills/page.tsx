@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import AnimatedSection from '../AnimatedSection';
 
 const skillCategories = [
   {
     title: "Core Skills",
     description:
-      "ABuilding scalable, high performance web applications with a focus on clean architecture, intuitive user experiences, and maintainable, type-safe code ",
+      "ABuilding scalable, high performance web applications with a focus on clean architecture, intuitive user experiences, and maintainable, type safe code ",
     skills: ["JavaScript","NodeJs","Express.Js","REST APIs + GraphQL","React ", "Next.js ", "TypeScript", "Redux Toolkit","Zustand", "TanStack Query", "ReactNative", "VueJs", "Websocket"],
     icon: "terminal",
     iconColor: "text-secondary",
