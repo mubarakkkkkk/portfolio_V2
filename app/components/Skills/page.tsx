@@ -1,13 +1,27 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const skillCategories = [
   {
     title: "Core Skills",
     description:
       "ABuilding scalable, high performance web applications with a focus on clean architecture, intuitive user experiences, and maintainable, type safe code ",
-    skills: ["JavaScript","NodeJs","Express.Js","REST APIs + GraphQL","React ", "Next.js ", "TypeScript", "Redux Toolkit","Zustand", "TanStack Query", "ReactNative", "VueJs", "Websocket"],
+    skills: [
+      "JavaScript",
+      "NodeJs",
+      "Express.Js",
+      "REST APIs + GraphQL",
+      "React ",
+      "Next.js ",
+      "TypeScript",
+      "Redux Toolkit",
+      "Zustand",
+      "TanStack Query",
+      "ReactNative",
+      "VueJs",
+      "Websocket",
+    ],
     icon: "terminal",
     iconColor: "text-secondary",
     iconBg: "bg-secondary/10",
@@ -17,7 +31,15 @@ const skillCategories = [
   {
     title: "Development Tools",
     description: null,
-    skills: ["Git / Github", "Docker", "Vercel", "Storybook", "Railyway","Netlify","AWS"],
+    skills: [
+      "Git / Github",
+      "Docker",
+      "Vercel",
+      "Storybook",
+      "Railway",
+      "Netlify",
+      "AWS",
+    ],
     icon: null,
     iconColor: null,
     iconBg: null,
@@ -27,7 +49,14 @@ const skillCategories = [
   {
     title: "Styling & Motion",
     description: null,
-    skills: ["Tailwind CSS", "Framer Motion", "Radix UI", "CSS Modules", "Shadcn", "Scss"],
+    skills: [
+      "Tailwind CSS",
+      "Framer Motion",
+      "Radix UI",
+      "CSS Modules",
+      "Shadcn",
+      "Scss",
+    ],
     icon: null,
     iconColor: null,
     iconBg: null,
@@ -38,9 +67,12 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section className="py-24 bg-surface-container-lowest overflow-hidden w-full" id="process">
+    <section
+      className="py-24 bg-surface-container-lowest overflow-hidden w-full"
+      id="process"
+    >
       <div className="max-w-7xl mx-auto px-8">
-        <motion.h2 
+        <motion.h2
           className="font-headline text-4xl font-bold tracking-tight text-on-surface mb-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,19 +82,19 @@ export default function Skills() {
           Technical Domain
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.1,
               }}
               viewport={{ once: true, amount: 0.2 }}
               whileHover={{ y: -5 }}
-              className={`${category.colSpan} p-8 rounded-xl glass-card border border-outline-variant/10 flex flex-col justify-between cursor-pointer`}
+              className={`${category.colSpan} p-8 rounded-xl glass-card border border-outline-variant/10 flex flex-col gap-6 cursor-pointer`}
             >
               <div>
                 {/* Icon (large card only) */}
@@ -74,7 +106,9 @@ export default function Skills() {
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
                     viewport={{ once: true, amount: 0.2 }}
                   >
-                    <span className={`material-symbols-outlined ${category.iconColor}`}>
+                    <span
+                      className={`material-symbols-outlined ${category.iconColor}`}
+                    >
                       {category.icon}
                     </span>
                   </motion.div>
@@ -98,7 +132,7 @@ export default function Skills() {
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ 
+                    transition={{
                       duration: 0.3,
                       delay: index * 0.1 + 0.3 + idx * 0.05,
                     }}

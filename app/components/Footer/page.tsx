@@ -20,7 +20,7 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          09018685567 | abiolamubarakolamide05@gmail.com
+        abiolamubarakolamide05@gmail.com
         </motion.div>
 
         {/* Links */}
