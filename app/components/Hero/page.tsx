@@ -1,7 +1,6 @@
+"use client";
 
-'use client';
-
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const containerVariants = {
@@ -39,7 +38,7 @@ export default function Hero() {
         {/* Badge */}
         <motion.span
           variants={itemVariants}
-          className="inline-block py-1 px-3 mb-6 rounded-full bg-surface-container-high text-on-surface-variant text-[0.6875rem] uppercase tracking-widest font-medium"
+          className="inline-block py-1 px-3 mb-6 rounded-full  text-on-surface-variant text-[0.6875rem] uppercase tracking-widest font-medium relative z-20"
         >
           Available for new projects
         </motion.span>
@@ -59,9 +58,9 @@ export default function Hero() {
           variants={itemVariants}
           className="font-body text-on-primary-container text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Specializing in React, ReactNative, VueJs, Node.js, Next.js, Express.Js and technical restraint. I transform
-          complex problems into high performance, pixel perfect digital
-          interfaces.
+          Specializing in React, ReactNative, VueJs, Node.js, Next.js,
+          Express.Js and technical restraint. I transform complex problems into
+          high performance, pixel perfect digital interfaces.
         </motion.p>
 
         {/* CTAs */}

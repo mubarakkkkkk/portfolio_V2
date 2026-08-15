@@ -5,7 +5,7 @@ import { Download, Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#expertise", label: "Expertise" },
-  { href: "#work", label: "Work" },  
+  { href: "#work", label: "Work" },
   { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
@@ -30,7 +30,7 @@ export default function Navbar() {
           }
         }
       },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -61,7 +61,7 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   const handleDownload = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = "/Mubarak Abiola's Resume.pdf";
     link.download = "Mubarak's Resume";
     link.click();
@@ -97,7 +97,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA Button */}
-        <button 
+        <button
           onClick={handleDownload}
           className="hidden md:flex gap-2 px-6 py-2.5 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-all duration-300 active:scale-95"
         >
@@ -116,42 +116,46 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-black/95 backdrop-blur-2xl transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-transparent backdrop-blur-xl transition-all duration-300 ease-in-out ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
         <div
-          className={`flex flex-col items-center gap-6 pt-10 px-8 transition-transform duration-300 ease-in-out ${
+          className={`flex flex-col items-center gap-6 pt-10 px-4 transition-transform duration-300 ease-in-out ${
             mobileMenuOpen ? "translate-y-0" : "-translate-y-4"
           }`}
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={handleMobileLinkClick}
-              className={`text-lg font-medium transition-colors duration-300 ${
-                activeSection === link.href
-                  ? "text-secondary font-bold"
-                  : "text-on-surface-variant hover:text-tertiary"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          <div className="w-full max-w-md mx-auto bg-black/60 backdrop-blur-md rounded-xl px-6 py-8">
+            <div className="flex flex-col items-stretch gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleMobileLinkClick}
+                  className={`block w-full text-center text-lg font-medium transition-colors duration-300 ${
+                    activeSection === link.href
+                      ? "text-secondary font-bold"
+                      : "text-on-surface-variant hover:text-tertiary"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
 
-          {/* Mobile Download Button */}
-          <button
-            onClick={() => {
-              handleDownload();
-              handleMobileLinkClick();
-            }}
-            className="flex gap-2 mt-4 px-8 py-3 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-all duration-300 active:scale-95"
-          >
-            Download Resume <Download size={20} />
-          </button>
+            {/* Mobile Download Button */}
+            <button
+              onClick={() => {
+                handleDownload();
+                handleMobileLinkClick();
+              }}
+              className="flex gap-2 mt-4 px-8 py-3 rounded-full border border-tertiary/20 text-secondary font-semibold hover:bg-secondary hover:text-on-secondary transition-all duration-300 active:scale-95"
+            >
+              Download Resume <Download size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </nav>
