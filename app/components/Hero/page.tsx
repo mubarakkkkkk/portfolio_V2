@@ -24,10 +24,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[921px] flex flex-col justify-center items-center px-8 overflow-hidden w-full">
+    <section className="relative min-h-230.25 flex flex-col justify-center items-center px-8 overflow-hidden w-full">
       {/* Ambient Background Glows */}
-      <div className="absolute top-1/4 -left-1/3 w-[500px] h-[500px] bg-on-secondary-container/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-1/3 w-[400px] h-[400px] bg-tertiary/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 -left-1/3 w-125 h-125 bg-on-secondary-container/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-1/3 w-100 h-100 bg-tertiary/5 blur-[120px] rounded-full pointer-events-none" />
 
       <motion.div
         className="relative z-10 max-w-5xl text-center"
